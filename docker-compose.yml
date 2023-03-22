@@ -1,0 +1,17 @@
+version: "3.8"
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    ports:
+      - 1030:1030
+
+  db:
+    image: stardog/stardog:7.9.1-java11-preview
+    ports:
+      - 5820:5820
+
+    volumes:
+      - ${PATH_LISC_STARDOG}:/var/opt/stardog
