@@ -1,0 +1,515 @@
+P1081	Human Development Index
+P1082	population
+P1083	maximum capacity
+P1087	Elo rating
+P1092	total produced
+P1093	gross tonnage
+P1096	orbital eccentricity
+P1098	number of speakers
+P1100	number of cylinders
+P1101	floors above ground
+P1102	flattening
+P1103	number of platform tracks
+P1104	number of pages
+P1110	attendance
+P1113	number of episodes
+P1114	quantity
+P1120	number of deaths
+P1125	Gini coefficient
+P1128	employees
+P1132	number of participants
+P1139	floors below ground
+P1174	visitors per year
+P1198	unemployment rate
+P1215	apparent magnitude
+P1279	inflation rate
+P1301	number of elevators
+P1314	number of spans
+P1339	number of injured
+P1342	number of seats
+P1350	number of matches played/races/starts
+P1351	number of points/goals/set scored
+P1352	ranking
+P1358	points for
+P1359	number of points/goals conceded
+P1373	daily patronage
+P1410	number of representatives in an organization/legislature or won in elections
+P1418	orbits completed
+P1457	absolute magnitude
+P1538	number of households
+P1539	female population
+P1540	male population
+P1548	maximum Strahler number
+P1561	number of survivors
+P1603	number of cases
+P1661	Alexa rank
+P1697	total valid votes
+P1831	electorate
+P1867	eligible voters
+P1868	ballots cast
+P1971	number of children
+P2021	Erdős number
+P2043	length
+P2044	elevation above sea level
+P2045	orbital inclination
+P2046	area
+P2047	duration
+P2048	height
+P2049	width
+P2052	speed
+P2053	watershed area
+P2054	density
+P2067	mass
+P2073	vehicle range
+P2076	temperature
+P2109	installed capacity
+P2120	radius
+P2121	prize money
+P2124	member count
+P2130	cost
+P2131	nominal GDP
+P2132	nominal GDP per capita
+P2134	total reserves
+P2137	total equity
+P2138	total liabilities
+P2139	total revenue
+P2142	box office
+P2144	frequency
+P2146	orbital period
+P2151	focal length
+P2196	students count
+P2208	average shot length
+P2213	longitude of ascending node
+P2217	cruise speed
+P2218	net worth
+P2219	real gross domestic product growth rate
+P2225	discharge
+P2226	market capitalization
+P2233	semi-major axis of an orbit
+P2234	volume as quantity
+P2243	apoapsis
+P2244	periapsis
+P2248	argument of periapsis
+P2250	life expectancy
+P2257	event interval
+P2261	beam
+P2262	draft
+P2284	price
+P2295	net profit
+P2299	PPP GDP per capita
+P2324	quantity buried
+P2325	mean anomaly
+P2351	number of graves
+P2386	diameter
+P2402	total expenditure
+P2403	total assets
+P2415	personal best
+P2436	voltage
+P2437	number of seasons
+P2532	lowest atmospheric pressure
+P2547	perimeter
+P2555	fee
+P2573	number of out-of-school children
+P2583	distance from Earth
+P2595	maximum gradient
+P2630	cost of damage
+P2635	number of parts of this work
+P2659	topographic isolation
+P2660	topographic prominence
+P2663	common equity tier 1 capital ratio (CETI)
+P2769	budget
+P2787	longest span
+P2790	net tonnage
+P2791	power consumed
+P2793	clearance
+P2855	VAT-rate
+P2873	time in space
+P2884	mains voltage
+P2895	maximum sustained winds
+P2907	UTC timezone offset
+P2923	focal height
+P2927	water as percent of area
+P2929	lighthouse range
+P2997	age of majority
+P2998	age of candidacy
+P2999	age of consent
+P3000	marriageable age
+P3001	retirement age
+P3020	residence time of water
+P3086	speed limit
+P3087	fiscal/tax revenue
+P3157	event distance
+P3270	compulsory education (minimum age)
+P3271	compulsory education (maximum age)
+P3362	operating income
+P3457	case fatality rate
+P3529	median income
+P3737	maximum wavelength of sensitivity
+P3738	minimum wavelength of sensitivity
+P3744	number of subscribers
+P3864	suicide rate
+P3872	patronage
+P3983	sports league level
+P4010	GDP (PPP)
+P4080	number of houses
+P4103	assets under management
+P4341	synodic period
+P4350	salinity
+P4442	mean age
+P4501	albedo
+P4511	vertical depth
+P4519	payload mass
+P4841	total fertility rate
+P5043	number of abstentions
+P5044	number of spoilt votes
+P5045	number of blank votes
+P5141	coastline
+P5167	vehicles per thousand people
+P5595	number of platform faces
+P5822	admission rate
+P5894	tuition fee
+P5982	annual number of weddings
+P6343	urban population
+P6344	rural population
+P6498	illiterate population
+P6499	literate population
+P6509	total goals in career
+P6543	total shots in career
+P6544	total points in career
+P6545	total assists in career
+P6546	penalty minutes in career
+P6547	career plus-minus rating
+P6589	endowment
+P6590	highest break
+P6591	maximum temperature record
+P6697	Football Money League rank
+P6794	minimum wage
+P6801	number of hospital beds
+P6897	literacy rate
+P7015	surface gravity
+P7297	cumulative elevation gain
+P7422	minimum temperature record
+P8010	number of recoveries
+P8328	Democracy Index
+P8340	estimated value
+P8476	BTI Governance Index
+P8477	BTI Status Index
+P569	date of birth
+P570	date of death
+P571	inception
+P575	time of discovery or invention
+P576	dissolved, abolished or demolished date
+P577	publication date
+P580	start time
+P582	end time
+P585	point in time
+P606	first flight
+P619	UTC date of spacecraft launch
+P620	time of spacecraft landing
+P621	time of spacecraft orbit decay
+P622	spacecraft docking/undocking date
+P729	service entry
+P730	service retirement
+P746	date of disappearance
+P1191	date of first performance
+P1249	time of earliest written record
+P1317	floruit
+P1619	date of official opening
+P1636	date of baptism in early childhood
+P2031	work period (start)
+P2032	work period (end)
+P2669	discontinued date
+P2754	production date
+P2913	date depicted
+P3893	public domain date
+P3999	date of official closure
+P4602	date of burial or cremation
+P6949	announcement date
+P7295	Gregorian calendar start date
+P625	coordinate location
+P1332	coordinates of northernmost point
+P1333	coordinates of southernmost point
+P1334	coordinates of easternmost point
+P1335	coordinates of westernmost point
+P2786	aerodrome reference point
+P5140	coordinates of geographic center
+P38	currency
+P53	family
+P65	site of astronomical discovery
+P183	endemic to
+P193	main building contractor
+P397	parent astronomical body
+P520	armament
+P546	docking port
+P834	train depot
+P1079	launch contractor
+P1716	brand
+P1840	investigated by
+P1951	investor
+P3093	recovered by
+P3815	volcano observatory
+P4661	reservoir created
+P4792	dam
+P7047	enemy of
+P6	head of government
+P17	country
+P19	place of birth
+P20	place of death
+P26	spouse
+P27	country of citizenship
+P30	continent
+P35	head of state
+P36	capital
+P40	child
+P47	shares border with
+P50	author
+P54	member of sports team
+P57	director
+P58	screenwriter
+P61	discoverer or inventor
+P66	ancestral home
+P69	educated at
+P81	connecting line
+P84	architect
+P85	anthem
+P86	composer
+P88	commissioned by
+P98	editor
+P101	field of work
+P102	member of political party
+P108	employer
+P112	founded by
+P113	airline hub
+P115	home venue
+P118	league
+P119	place of burial
+P123	publisher
+P126	maintained by
+P127	owned by
+P131	located in the administrative territorial entity
+P135	movement
+P137	operator
+P138	named after
+P144	based on
+P155	follows
+P159	headquarters location
+P161	cast member
+P162	producer
+P166	award received
+P169	chief executive officer
+P170	creator
+P172	ethnic group
+P175	performer
+P176	manufacturer
+P177	crosses
+P178	developer
+P179	part of the series
+P180	depicts
+P184	doctoral advisor
+P189	location of discovery
+P190	twinned administrative body
+P194	legislative body
+P195	collection
+P197	adjacent station
+P199	business division
+P200	inflows
+P201	lake outflow
+P205	basin country
+P206	located in or next to body of water
+P237	coat of arms
+P241	military branch
+P248	stated in
+P263	official residence
+P264	record label
+P272	production company
+P276	location
+P286	head coach
+P287	designed by
+P291	place of publication
+P344	director of photography
+P361	part of
+P371	presenter
+P403	mouth of the watercourse
+P414	stock exchange
+P417	patron saint
+P421	located in time zone
+P449	original broadcaster
+P450	astronaut mission
+P451	unmarried partner
+P457	foundational text
+P460	said to be the same as
+P463	member of
+P466	occupant
+P469	lakes on river
+P485	archives at
+P488	chairperson
+P495	country of origin
+P500	exclave of
+P501	enclave within
+P504	home port
+P505	general manager
+P521	scheduled service destination
+P530	diplomatic relation
+P532	port of registry
+P533	target
+P542	officially opened by
+P543	oath made by
+P545	torch lit by
+P551	residence
+P559	terminus
+P598	commander of (DEPRECATED)
+P607	conflict
+P608	exhibition history
+P609	terminus location
+P610	highest point
+P631	structural engineer
+P634	captain
+P642	of
+P647	drafted by
+P664	organizer
+P669	located on street
+P674	characters
+P676	lyrics by
+P706	located on terrain feature
+P708	diocese
+P725	voice actor
+P737	influenced by
+P740	location of formation
+P749	parent organization
+P750	distributed by
+P767	contributor to the creative work or subject
+P793	significant event
+P800	notable work
+P807	separated from
+P825	dedicated to
+P833	interchange station
+P840	narrative location
+P859	sponsor
+P885	origin of the watercourse
+P915	filming location
+P921	main subject
+P930	type of electrification
+P931	place served by transport hub
+P937	work location
+P941	inspired by
+P945	allegiance
+P974	tributary
+P991	successful candidate
+P1001	applies to jurisdiction
+P1027	conferred by
+P1029	crew member
+P1037	director / manager
+P1038	relative
+P1040	film editor
+P1064	track gauge
+P1066	student of
+P1071	location of creation
+P1075	rector
+P1158	location of landing
+P1192	connecting service
+P1269	facet of
+P1290	godparent
+P1302	primary destinations
+P1321	place of origin (Switzerland)
+P1327	partner in business or sport
+P1336	territory claimed by
+P1343	described by source
+P1344	participant in
+P1363	points/goal scored by
+P1365	replaces
+P1382	partially coincident with
+P1383	contains settlement
+P1408	licensed to broadcast to
+P1411	nominated for
+P1416	affiliation
+P1427	start point
+P1431	executive producer
+P1444	destination point
+P1445	fictional universe described in
+P1532	country for sport
+P1589	lowest point
+P1809	choreographer
+P1875	represented by
+P1876	vehicle
+P1877	after a work by
+P1891	signatory
+P1923	participating team
+P2321	general classification of race participants
+P2341	indigenous to
+P2348	time period
+P2408	set in period
+P2417	stage classification
+P2438	narrator
+P2500	league level below
+P2505	carries
+P2512	series spin-off
+P2515	costume designer
+P2522	victory
+P2541	operating area
+P2554	production designer
+P2632	place of detention
+P2652	partnership with
+P2674	next crossing downstream
+P2789	connects with
+P2825	via
+P2852	emergency phone number
+P2881	promoted
+P2882	relegated
+P2925	domain of saint or deity
+P2936	language used
+P3015	backup or reserve team or crew
+P3018	located in protected area
+P3085	qualifies for event
+P3092	film crew member
+P3173	offers view on
+P3174	art director
+P3179	territory overlaps
+P3275	storyboard artist
+P3279	statistical leader
+P3300	musical conductor
+P3301	broadcast by
+P3320	board member
+P3342	significant person
+P3373	sibling
+P3403	coextensive with
+P3450	sports season of league or competition
+P3461	designated as terrorist by
+P3494	points classification
+P3496	teams classification by points
+P3497	teams classification by time
+P3602	candidacy in election
+P3730	next higher rank
+P3842	located in present-day administrative territorial entity
+P3931	copyright holder
+P3967	final event
+P4320	mountains classification
+P4321	best combative classification
+P4322	best sprinter classification
+P4323	young rider classification
+P4324	combination classification
+P4330	contains
+P4552	mountain range
+P4584	first appearance
+P4608	scenographer
+P4614	drainage basin
+P4777	has boundary
+P4805	make-up artist
+P4908	season
+P5138	season of club or team
+P5353	school district
+P5389	permanent resident of
+P5707	samples from work
+P5940	plot expanded in
+P6087	coach of sports team
+P6193	ratified by
+P6275	copyright representative
+P6379	has works in the collection
+P6758	supported sports team
+P6885	historical region
+P6942	animator
+P7153	significant place
+P7938	associated electoral district
+P7959	historic county
+P8047	country of registry
+P8345	media franchise
+P8371	references work, tradition or theory
