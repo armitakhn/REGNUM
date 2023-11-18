@@ -45,6 +45,9 @@ class BaseDataLoader:
                 for line in f.readlines():
                     self.numerical_preds.append(line.strip())
 
+            except TypeError:
+                _d = pd.read_csv(self.path_numerical_preds, sep=self.delim, index_col=False, names=["predicate"])
+                self.numerical_preds = list(set(_d['predicate'].values))
             except FileNotFoundError:
                 f = urlopen(self.path_numerical_preds)
                 self.numerical_preds = []

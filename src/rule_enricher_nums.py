@@ -17,8 +17,8 @@ class BaseRuleEnricherNumerical:
         self.graph = RDFGraph
         self.numerical_preds: list = numerical_preds
         self.only_margin_rules = only_margin_rules
-        self.margin_conf = 0.2  # at least by % better than parent conf
-        self.margin_hc = 0.2  # at most % worse than hc
+        self.margin_conf = 0.15  # at least by % better than parent conf
+        self.margin_hc = 0.15  # at most % worse than hc
         self.min_conf_pr = self.compute_min_conf()
         self.even_not_func_enrich_g: bool = add_num_pred_grounded_not_functional
         self.debug_mode: bool = debug_mode
@@ -43,7 +43,6 @@ class BaseRuleEnricherNumerical:
     def _find_useful_pred_per_var(self, var):
         qq = query_select_useful_preds(self.rule, var)
         useful_preds = self.graph.query_dataframe(qq)
-
         return set(useful_preds.useful_preds).intersection(set(self.numerical_preds))
 
     def _compute_var_to_pred_relaxed_supp(self):
@@ -52,6 +51,7 @@ class BaseRuleEnricherNumerical:
 
         for var in self.rule.rule_variables:
             possible_num_preds = self._find_useful_pred_per_var(var)
+            #print('possible_num_preds: ', possible_num_preds)
             for pred in possible_num_preds:  # self.numerical_preds:
                 plaus, relaxed_supp = self._checker_relaxed_supp({var: [pred]})
                 if plaus:  # relaxed head coverage condition not satisfied...
@@ -72,6 +72,7 @@ class BaseRuleEnricherNumerical:
         relaxed_supp = self.graph.query_count(qs)
 
         plaus = self._checker_satisfy_minhc(relaxed_supp)
+        #print(plaus)
         if self.debug_mode and plaus:
             print(f"the query to compute the relaxed supp: \n {qs}")
             # print(f"relaxed supp: \n {relaxed_supp}")
@@ -161,11 +162,15 @@ class RuleEnricherNumerical(BaseRuleEnricherNumerical):
 
     def run(self):
         level = 1
+        #print('QQQQQ', sum((len(d) for d in self.suitable_var_to_pred.values())))
+        #print(self.suitable_var_to_pred)
         while sum((len(d) for d in self.suitable_var_to_pred.values())) > level and level < 4:
+            #print('here')
             self.run_l(level)
             level += 1
 
     def run_l(self, level):
+        #print(self.min_pos_example_satisfy_minhc)
         if self.min_pos_example_satisfy_minhc == 1:
             return None
         t1 = time()
@@ -176,6 +181,8 @@ class RuleEnricherNumerical(BaseRuleEnricherNumerical):
         random.shuffle(relaxed_supp_level_)
 
         for d, rs_supp in relaxed_supp_level_:
+            #print('KKKK', d, rs_supp)
+
             # if d !={'?b': ['http://patronage_1'], '?a': ['http://patronage_1']}:
             #    continue
             # print(level, rs_supp, self.min_pos_example_satisfy_minhc, d)
@@ -192,6 +199,7 @@ class RuleEnricherNumerical(BaseRuleEnricherNumerical):
             # print(f't3-t2 {t3-t2}')
 
             min_event, min_not_event = self.compute_min_sample_leaf(rs_supp, rs_pca_bdysize)
+            #print('EEEE', min_event, min_not_event)
             if min_not_event < 2:
                 continue
             t4 = time()
@@ -259,7 +267,7 @@ class RuleEnricherNumerical(BaseRuleEnricherNumerical):
                 pca_conf = node.rule_measures[include_exclude]['pcaConfidence']
                 f_score = node.rule_measures[include_exclude]['f_score']
 
-                rc = ConstructRules(rule=self.rule, numerical_part=node.rule_node, support=support,
+                rc = ConstructRules(rule=self.rule, numerical_part=node, support=support,
                                     pca_body_size=pca_body_size, pca_confidence=pca_conf,
                                     include_exclude=include_exclude,
                                     head_coverage=head_coverage, f_score=f_score, level=level)
