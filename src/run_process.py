@@ -1,7 +1,7 @@
 import argparse, os
 
 from data_loader import GeneralDataLoader
-from graph_data import StarDogGraph
+from graph_data import StarDogGraph, RDFLibGraph
 from parent_ruleminer import RunParseAMIE
 from tqdm import tqdm
 from runner import run
@@ -46,7 +46,7 @@ def main() -> None:
     create_tmp_folder(path_result)
 
     dl = GeneralDataLoader(path_t=tr_path, path_numerical_preds=args.numerical_path)
-    gr = StarDogGraph(dl, database_name=db_name, force=False, p_save_g=f'{path_result}graph.ttl')
+    gr = RDFLibGraph(dl, database_name='sample', force=True, p_save_g=f'{path_result}graph.ttl') #StarDogGraph
     miner = RunParseAMIE(data=dl.df, path_rule_miner=args.path_RM,
                          path_save_rules=path_result)
     rules = miner.parse()
@@ -60,5 +60,5 @@ if __name__ == "__main__":
 
 """
 python src/run_process.py --train_path path/to/train.tsv --numerical_path path/to/num.tsv --path_RM path/to/rm.jar --path_result path/to/result
-
+python src/run_process.py --train_path data/datasets/sample_small/train_dl.tsv --numerical_path data/datasets/sample_small/numericals.tsv --path_result data/results/result_sample
 """

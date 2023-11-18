@@ -12,7 +12,7 @@ from tqdm import tqdm
 from utils import create_tmp_folder
 logger = logging.getLogger()
 logger.setLevel(logging.CRITICAL)
-
+import rdflib
 
 @dataclass
 class RDFGraph(ABC):
@@ -37,13 +37,15 @@ class RDFGraph(ABC):
 
 @dataclass
 class RDFLibGraph(RDFGraph):
-    save: bool = False
+    force: bool = False
+    database_name: str = 'tmp'
+    save_enabled: bool = False  # Renamed the attribute to save_enabled
     p_save_g: str = PATH_SAVE_GRAPH
 
     def __post_init__(self):
         self.graph = Graph()
         self.populate_graph()
-        if self.save:
+        if self.save_enabled:
             self.save_graph_serialize()
 
     def populate_graph(self):
@@ -70,9 +72,22 @@ class RDFLibGraph(RDFGraph):
         return relaxed_supp
 
     def query_dataframe(self, query):
-        graph.query(query)
+        def _fix_type(val):
+            if type(val) == rdflib.term.Literal:
+                return float(val)
+            elif type(val) == rdflib.term.URIRef:
+                return str(val)
+            else:
+                return val
+        self.graph.query(query)
         dict_list_q_ = [row.asdict() for row in self.graph.query(query)]
-        return pd.DataFrame(dict_list_q_)
+        if len(dict_list_q_)==0:
+            return pd.DataFrame({'useful_preds':[]})
+
+        dd = pd.DataFrame(dict_list_q_)
+        for col in list(dd.columns):
+            dd[col] = dd[col].apply(lambda x: _fix_type(x))
+        return dd
 
     def query_res_list(self, query):
         pass
@@ -93,9 +108,9 @@ class StarDogGraph(RDFGraph):
         # 'http://localhost:5820',
 
         connection_details = {
-            'endpoint': 'http://localhost:5820',
-            'username': 'admin',
-            'password': 'admin'
+            'endpoint': 'https://sd-c4dede44.stardog.cloud:5820',
+            'username': 'sina.akhavan@icloud.com',
+            'password': 'Sinasina2'
         }
 
         with stardog.Admin(**connection_details) as admin:
@@ -106,7 +121,6 @@ class StarDogGraph(RDFGraph):
         self.conn = stardog.Connection(self.database_name, **connection_details)
 
     def populate_graph(self):
-        print(self.p_save_g)
 
         if not os.path.exists(self.p_save_g) or self.force:
             RDFLibGraph(self.dataloader, save=True, p_save_g=self.p_save_g)

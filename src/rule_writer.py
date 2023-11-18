@@ -103,38 +103,36 @@ class WriteNewRules:
     def _write_numerical_pred_rules_amie_like(self, dict_all_new_rules):
         with open(self.saving_path, "a") as f:
             for idx, dict_bin_rules in dict_all_new_rules.items():
-                for binning, lis_parent_rule in dict_bin_rules.items():
-                    if binning != self.binning_technique:
-                        continue
 
-                    _tmp_l = lis_parent_rule[0]
-                    self._write_original_rule(_tmp_l['parent_rule'], f)
-                    # print(lis_parent_rule)
-                    if len(lis_parent_rule) == 1:
-                        for _ in range(5):
-                            f.write('\n')
-                        continue
-                    for dict_new_rule in lis_parent_rule[1:]:
-                        # rule = self.create_str_new_rule(dict_new_rule['parent_rule'], dict_new_rule)
-                        enriched_rule = dict_new_rule['enriched_rule']
-                        headCoverage = dict_new_rule['headCoverage']
-                        stdConfidence = dict_new_rule['stdConfidence']
-                        pcaConfidence = dict_new_rule['pcaConfidence']
-                        # f_score = dict_new_rule['f_score']
-                        support = dict_new_rule['support']
-                        bodySize = dict_new_rule['bodySize']
-                        pcaBodysize = dict_new_rule['pcaBodySize']
-                        functionalVariable = dict_new_rule['functionalVariable']
-                        predicateNumerical = dict_new_rule['pred']
-                        numericalVariable = dict_new_rule['var_num']
-                        beginInterval = dict_new_rule['beginInterval']
-                        endInterval = dict_new_rule['endInterval']
-                        # include_exclude = dict_new_rule['include_exclude']
-
-                        f.write(
-                            f'{enriched_rule}\t{headCoverage}\t{stdConfidence}\t{pcaConfidence}\t{support}\t{bodySize}\t{pcaBodysize}\t{functionalVariable}\t{predicateNumerical}\t{numericalVariable}\t{beginInterval}\t{endInterval}\n')
+                #if binning != self.binning_technique:
+                #    continue
+                self._write_original_rule(dict_bin_rules['parent_rule'], f)
+                # print(lis_parent_rule)
+                if len(dict_bin_rules['numerical_rules']) == 0:
                     for _ in range(5):
                         f.write('\n')
+                    continue
+                for dict_new_rule in dict_bin_rules['numerical_part']:
+                    # rule = self.create_str_new_rule(dict_new_rule['parent_rule'], dict_new_rule)
+                    enriched_rule = dict_new_rule['enriched_rule']
+                    headCoverage = dict_new_rule['headCoverage']
+                    stdConfidence = dict_new_rule['stdConfidence']
+                    pcaConfidence = dict_new_rule['pcaConfidence']
+                    # f_score = dict_new_rule['f_score']
+                    support = dict_new_rule['support']
+                    bodySize = dict_new_rule['bodySize']
+                    pcaBodysize = dict_new_rule['pcaBodySize']
+                    functionalVariable = dict_new_rule['functionalVariable']
+                    predicateNumerical = dict_new_rule['pred']
+                    numericalVariable = dict_new_rule['var_num']
+                    beginInterval = dict_new_rule['beginInterval']
+                    endInterval = dict_new_rule['endInterval']
+                    # include_exclude = dict_new_rule['include_exclude']
+
+                    f.write(
+                        f'{enriched_rule}\t{headCoverage}\t{stdConfidence}\t{pcaConfidence}\t{support}\t{bodySize}\t{pcaBodysize}\t{functionalVariable}\t{predicateNumerical}\t{numericalVariable}\t{beginInterval}\t{endInterval}\n')
+                for _ in range(5):
+                    f.write('\n')
 
     def _write_numerical_pred_rules_json(self, dict_all_new_rules):
         with open(self.saving_path, "w") as file:
